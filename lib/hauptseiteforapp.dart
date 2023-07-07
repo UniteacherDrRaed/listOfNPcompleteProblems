@@ -29,6 +29,14 @@ void nextProblem()
     {
          _indexPrpblem++;
     }
+     else
+    {
+      ScaffoldMessenger.of(context).
+      showSnackBar(const SnackBar(
+        content: Text("this is the last one in this  list")
+        ,backgroundColor:Colors.blue));
+    
+    }
     
   });
 }
@@ -39,6 +47,14 @@ void previousProblem()
     if (_indexPrpblem>1) 
     {
          _indexPrpblem--;
+    }
+    else
+    {
+      ScaffoldMessenger.of(context).
+      showSnackBar(const SnackBar(
+        content: Text("this is the first one in this  list")
+        ,backgroundColor:Colors.blue));
+    
     }
     
   });
@@ -57,9 +73,11 @@ int _indexPrpblem=0;
           [
             Tab(
               text: "NP complete problems",
+              icon: Icon(Icons.list),
             ),
             Tab(
               text: "refences",
+              icon: Icon(Icons.book),
             ),
           ]),
           ),
@@ -80,23 +98,32 @@ int _indexPrpblem=0;
 
                 child: Column(
               children: [
-                Text(_listOfNPcompleteProblems[_indexPrpblem])
+                Text(_listOfNPcompleteProblems[_indexPrpblem],
+                style: const TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.yellowAccent,
+                 ),)
               ,
-              Center(
-                child: Row(
-                  children: [
-                    TextButton(onPressed: (){
-                  previousProblem();
-                }, child: Icon(Icons.navigate_before)
-                    ),              
-                  
-                TextButton(
-                  onPressed: (){
-                       nextProblem();
-                }, child: Icon(Icons.navigate_next)
-                )
-                  ],
-                ),
+             
+      
+              Row(
+
+                children: [
+                  TextButton(onPressed: (){
+                previousProblem();
+              }, child: const Icon(Icons.navigate_before
+              ,size: 34,
+              color: Colors.yellowAccent,)
+                  ),              
+                
+              TextButton(
+                onPressed: (){
+                     nextProblem();
+              }, child: const Icon(Icons.navigate_next,size: 34,
+              color: Colors.yellowAccent,)
+              )
+                ],
               )
               ],
              ),
@@ -111,7 +138,8 @@ int _indexPrpblem=0;
                       Colors.pink
                     ])
                 ),
-             
+             child: 
+             Text("Cormen, Thomas H.; Leiserson, Charles E.; Rivest, Ronald L.; Stein, Clifford (2022) [1990]. Introduction to Algorithms (4th ed.). MIT Press and McGraw-Hill. ISBN 0-262-04630-X. "),
               )
             ],
           ),
