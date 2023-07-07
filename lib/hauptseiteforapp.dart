@@ -68,7 +68,11 @@ int _indexPrpblem=0;
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Some of NP complete problems"
+          ,style: TextStyle(color: Colors.red,
+          fontWeight: FontWeight.bold),
           ),
+          backgroundColor: Colors.pink.withOpacity(0.1),
+          
           bottom: const TabBar(tabs: 
           [
             Tab(
@@ -77,15 +81,15 @@ int _indexPrpblem=0;
             ),
             Tab(
               text: "refences",
-              icon: Icon(Icons.book),
+              icon: Icon(Icons.book_rounded),
             ),
           ]),
           ),
           body: TabBarView(
             children: [
               Container(
-                padding: EdgeInsets.all(24),
-                margin: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(24),
+                margin: const EdgeInsets.all(4),
                 height: 400,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
@@ -105,11 +109,13 @@ int _indexPrpblem=0;
                   color: Colors.yellowAccent,
                  ),)
               ,
-             
-      
+             const SizedBox(height: 50,)
+             ,
               Row(
 
                 children: [
+                  const SizedBox(width: 106,),
+
                   TextButton(onPressed: (){
                 previousProblem();
               }, child: const Icon(Icons.navigate_before
@@ -139,7 +145,17 @@ int _indexPrpblem=0;
                     ])
                 ),
              child: 
-             Text("Cormen, Thomas H.; Leiserson, Charles E.; Rivest, Ronald L.; Stein, Clifford (2022) [1990]. Introduction to Algorithms (4th ed.). MIT Press and McGraw-Hill. ISBN 0-262-04630-X. "),
+             Container(
+              padding: const EdgeInsets.all(34),
+               child: const Text("Cormen, Thomas H.; Leiserson, Charles E.; Rivest, Ronald L.; Stein, Clifford (2022) [1990]. Introduction to Algorithms (4th ed.). MIT Press and McGraw-Hill. ISBN 0-262-04630-X. ",
+               style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.lightBlue,
+                   ),
+                   ),
+             )
+                 ,
               )
             ],
           ),
