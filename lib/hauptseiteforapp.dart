@@ -46,7 +46,7 @@ void nextProblem()
 void previousProblem()
 {
   setState(() {
-    if (_indexPrpblem>1) 
+    if (_indexPrpblem>0) 
     {
          _indexPrpblem--;
     }
