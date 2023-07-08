@@ -21,7 +21,8 @@ class _HauptSeiteState extends State<HauptSeite> {
   "partition problem",
   "longest cycle problem",
   "Traveling Salesman problem",
-  "minimum hitting set"
+  "minimum hitting set",
+  "0-1 Knapsack"
 ];
 // ignore: prefer_final_fields
 void nextProblem()
